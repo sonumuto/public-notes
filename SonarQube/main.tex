@@ -1,0 +1,118 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{float}
+
+\title{SonarQube Notes}
+\author{Umut}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{PDF Reports}
+
+PDF based reports are available beginning with the Enterprise edition, so Community and Developer tiers depend on the interactive portal instead.
+
+\section{Overview}
+
+The Overview page surfaces the core quality metrics at a glance: \textbf{Security}, \textbf{Reliability}, \textbf{Maintainability}, \textbf{Coverage}, and \textbf{Duplications}. These indicators provide an instant read on project health.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{images/code_section.png}
+    \caption{SonarQube Overview}
+\end{figure}
+
+\section{Issues}
+
+The Issues view lists every open finding in a clean table together with the owning rule, severity, and the effort shown in the header. Extensive filtering is available by severity, status, security category, date, tags, and more, which makes narrowing focus straightforward when triaging.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\linewidth]{images/filtering.png}
+    \caption{Filtering}
+\end{figure}
+
+
+Each issue row exposes quick actions to change the status (Accept, False Positive, Confirm, or Fixed) and to assign an owner. Tags are suggested automatically yet can be adjusted whenever extra labeling helps.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{images/issues_page.png}
+    \caption{Issues Page}
+\end{figure}
+
+The dedicated Tags view illustrates which labels were applied automatically and lets you add them with custom categories.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{images/tags.png}
+    \caption{Tags}
+\end{figure}
+
+\section{Issue Details}
+
+Issue details are intentionally thorough. Each card answers the practical questions: Where is the issue, Why is this an issue, How can I fix it, activities, and where can I find More info.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{images/issue_details.png}
+    \caption{Issues Details}
+\end{figure}
+
+The \textbf{Why is this an issue?} panel explains the rule, outlines the impact, and clarifies the scope. Right below, \textbf{How can I fix it?} suggests concrete steps tailored to the detected language or framework, which speeds up consistent fixes.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{images/why_an_issue.png}
+    \caption{Why is this an issue?}
+\end{figure}
+
+\section{Security Hotspot}
+
+A Security Hotspot represents code that deserves a second look because it might enable an exploit under the right conditions. It is not yet a confirmed vulnerability, but it is the platform nudging a reviewer to confirm whether the implementation is safe.
+
+Possible alerts are the following:
+
+\begin{itemize}
+    \item Potentially hard coded password
+    \item Command injection
+    \item Code injection
+    \item Denial of Service (DoS)
+    \item Permissions (root)
+    \item Weak Cryptography
+    \item Encryption of Sensitive Data
+    \item Hard coded IP addresses
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{images/security_hotspot.png}
+    \caption{Security Hotspot}
+\end{figure}
+
+The details walk through \textbf{Where is the risk?}, \textbf{What is the risk?}, \textbf{Assess the risk}, and \textbf{How can I fix it?}, so reviewers can validate and plan accordingly.
+
+\section{Duplications}
+
+Duplicates provide a codes that are duplicated.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{images/duplications.png}
+    \caption{Duplications}
+\end{figure}
+
+\section{Coverage}
+
+Coverage visualizes how much of the codebase is exercised by automated tests.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{images/coverage.png}
+    \caption{Coverage}
+\end{figure}
+
+\end{document}
